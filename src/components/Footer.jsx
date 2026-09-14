@@ -1,75 +1,86 @@
-import React from 'react';
+import { Link } from "react-router-dom";
 
-const Footer = () => {
+const cols = [
+  { title: "Product", links: ["Features", "Pricing", "Templates", "Integrations"] },
+  { title: "Company", links: ["About", "Blog", "Careers", "Press"] },
+  { title: "Resources", links: ["Documentation", "Help Center", "Community", "Contact"] },
+];
+
+const socials = [
+  { name: "YouTube", path: "M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 00.5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z" },
+  { name: "Facebook", path: "M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.7-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0022 12z" },
+  { name: "X", path: "M18.9 2h3.3l-7.2 8.2L23.5 22h-6.6l-5.2-6.8L5.7 22H2.4l7.7-8.8L1.5 2h6.8l4.7 6.2L18.9 2zm-1.2 18h1.8L7.4 3.8H5.5L17.7 20z" },
+];
+
+export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300 pt-12 pb-6">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
-          <div className="md:col-span-2">
-            <h3 className="text-white text-lg font-semibold mb-4">DigiTools</h3>
-            <p className="text-sm">
+    <footer className="relative bg-white dark:bg-ink-950 text-slate-600 dark:text-slate-400 pt-20 pb-8 overflow-hidden noise border-t border-slate-100 dark:border-white/5">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[40rem] h-40 bg-brand-500/10 dark:bg-brand-600/20 blur-3xl rounded-full" />
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-500/50 to-transparent" />
+
+      <div className="container-x relative">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10 pb-14">
+          <div className="col-span-2 lg:col-span-2">
+            <Link to="/" className="flex items-center gap-2.5 mb-5 group">
+              <span className="w-10 h-10 rounded-2xl bg-gradient-to-br from-brand-500 to-brand-800 grid place-items-center text-white font-black shadow-lg group-hover:scale-105 transition-transform">
+                D
+              </span>
+              <span className="text-2xl font-extrabold text-slate-900 dark:text-white">DigiTools</span>
+            </Link>
+            <p className="text-sm leading-relaxed max-w-xs">
               Premium digital tools for creators, professionals, and businesses. Work smarter with our suite of powerful tools.
             </p>
+            <div className="mt-6 max-w-xs">
+              <p className="text-xs font-semibold text-slate-900 dark:text-white uppercase tracking-wider mb-3">Get product updates</p>
+              <form onSubmit={(e) => e.preventDefault()} className="relative">
+                <input type="email" placeholder="you@company.com"
+                  className="w-full bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-full pl-5 pr-14 py-3 text-sm outline-none focus:border-brand-500 dark:focus:border-brand-500 focus:bg-white dark:focus:bg-white/10 transition-all"
+                />
+                <button className="absolute right-1.5 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-gradient-to-br from-brand-500 to-brand-700 grid place-items-center text-white hover:shadow-[0_0_20px_-2px_rgba(139,92,246,.7)] transition-all">
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+                </button>
+              </form>
+            </div>
           </div>
+
+          {cols.map((c) => (
+            <div key={c.title}>
+              <h4 className="text-slate-900 dark:text-white font-semibold mb-5 text-sm uppercase tracking-wider">{c.title}</h4>
+              <ul className="space-y-3 text-sm">
+                {c.links.map((l) => (
+                  <li key={l}>
+                    <Link to="/" className="group inline-flex items-center gap-1.5 hover:text-brand-500 transition-colors">
+                      <span className="w-0 group-hover:w-3 h-px bg-brand-400 transition-all duration-300" />{l}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+
           <div>
-            <h4 className="text-white font-semibold mb-4">Product</h4>
-            <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-white">Features</a></li>
-              <li><a href="#" className="hover:text-white">Pricing</a></li>
-              <li><a href="#" className="hover:text-white">Templates</a></li>
-              <li><a href="#" className="hover:text-white">Integrations</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-white font-semibold mb-4">Company</h4>
-            <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-white">About</a></li>
-              <li><a href="#" className="hover:text-white">Blog</a></li>
-              <li><a href="#" className="hover:text-white">Careers</a></li>
-              <li><a href="#" className="hover:text-white">Press</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-white font-semibold mb-4">Resources</h4>
-            <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-white">Documentation</a></li>
-              <li><a href="#" className="hover:text-white">Help Center</a></li>
-              <li><a href="#" className="hover:text-white">Community</a></li>
-              <li><a href="#" className="hover:text-white">Contact</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-white font-semibold mb-4">Social Links</h4>
-            <div className="flex space-x-4">
-              <a href="#" className="hover:text-white">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
-                </svg>
-              </a>
-              <a href="#" className="hover:text-white">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.937 4.937 0 004.604 3.417 9.868 9.868 0 01-6.102 2.104c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 0021.543-11.71c0-.21-.003-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
-                </svg>
-              </a>
-              <a href="#" className="hover:text-white">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451c.979 0 1.771-.773 1.771-1.729V1.729C24 .774 23.204 0 22.225 0z" />
-                </svg>
-              </a>
+            <h4 className="text-slate-900 dark:text-white font-semibold mb-5 text-sm uppercase tracking-wider">Follow Us</h4>
+            <div className="flex gap-2.5">
+              {socials.map((s) => (
+                <a key={s.name} href="#" aria-label={s.name}
+                  className="w-10 h-10 rounded-xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 grid place-items-center hover:bg-brand-600 hover:border-brand-500 hover:-translate-y-0.5 transition-all duration-300"
+                >
+                  <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current text-slate-600 dark:text-slate-300 hover:text-white"><path d={s.path} /></svg>
+                </a>
+              ))}
             </div>
           </div>
         </div>
-        <div className="border-t border-gray-800 mt-8 pt-6 text-sm text-center flex flex-col md:flex-row justify-between items-center">
-          <p>© 2026 DigiTools. All rights reserved.</p>
-          <div className="flex space-x-4 mt-4 md:mt-0">
-            <a href="#" className="hover:text-white">Privacy Policy</a>
-            <a href="#" className="hover:text-white">Terms of Service</a>
-            <a href="#" className="hover:text-white">Cookies</a>
+
+        <div className="pt-7 border-t border-slate-100 dark:border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
+          <p>© {new Date().getFullYear()} DigiTools. Crafted with care.</p>
+          <div className="flex gap-6">
+            <Link to="/support" className="hover:text-brand-500 transition-colors">Privacy</Link>
+            <Link to="/support" className="hover:text-brand-500 transition-colors">Terms</Link>
+            <Link to="/support" className="hover:text-brand-500 transition-colors">Cookies</Link>
           </div>
         </div>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}
