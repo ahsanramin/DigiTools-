@@ -34,8 +34,14 @@ export default function Banner() {
       {/* Aurora blobs */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-[38rem] h-[38rem] rounded-full bg-gradient-to-br from-brand-300/40 to-indigo-300/30 dark:from-brand-600/25 dark:to-indigo-600/15 blur-3xl animate-blob" />
-        <div className="absolute top-1/3 -left-40 w-[32rem] h-[32rem] rounded-full bg-gradient-to-br from-fuchsia-200/40 to-brand-200/40 dark:from-fuchsia-600/15 dark:to-brand-600/15 blur-3xl animate-blob" style={{ animationDelay: "-4s" }} />
-        <div className="absolute bottom-0 left-1/2 w-[28rem] h-[28rem] rounded-full bg-sky-200/30 dark:bg-sky-500/10 blur-3xl animate-blob" style={{ animationDelay: "-8s" }} />
+        <div
+          className="absolute top-1/3 -left-40 w-[32rem] h-[32rem] rounded-full bg-gradient-to-br from-fuchsia-200/40 to-brand-200/40 dark:from-fuchsia-600/15 dark:to-brand-600/15 blur-3xl animate-blob"
+          style={{ animationDelay: "-4s" }}
+        />
+        <div
+          className="absolute bottom-0 left-1/2 w-[28rem] h-[28rem] rounded-full bg-sky-200/30 dark:bg-sky-500/10 blur-3xl animate-blob"
+          style={{ animationDelay: "-8s" }}
+        />
       </div>
 
       {/* Particle field */}
@@ -46,7 +52,10 @@ export default function Banner() {
       {/* Cursor spotlight */}
       <div
         className="pointer-events-none absolute inset-0 opacity-60"
-        style={{ background: "radial-gradient(500px circle at var(--mx, 50%) var(--my, 50%), rgba(139,92,246,.10), transparent 60%)" }}
+        style={{
+          background:
+            "radial-gradient(500px circle at var(--mx, 50%) var(--my, 50%), rgba(139,92,246,.10), transparent 60%)",
+        }}
       />
 
       {/* Grid */}
@@ -58,11 +67,10 @@ export default function Banner() {
         }}
       />
 
-      <div className="container-x relative pt-12 pb-16 lg:pt-16 lg:pb-24">
-        <div className="grid lg:grid-cols-2 gap-14 lg:gap-16 items-center">
+      <div className="container-x relative pt-10 pb-14 sm:pt-12 sm:pb-16 lg:pt-16 lg:pb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-14 lg:gap-16 items-center">
           {/* ============== LEFT: COPY ============== */}
           <div>
-            {/* Badge */}
             <ScrollReveal>
               <span className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full glass dark:glass-dark border border-brand-100 dark:border-brand-500/20 text-brand-700 dark:text-brand-300 text-xs sm:text-[13px] font-semibold shadow-[0_4px_20px_-6px_rgba(124,58,237,.3)]">
                 <span className="relative flex w-2 h-2">
@@ -74,14 +82,11 @@ export default function Banner() {
               </span>
             </ScrollReveal>
 
-            {/* Heading — fixed so BOTH lines always show */}
-            <h1 className="mt-6 text-[2.25rem] leading-[1.08] sm:text-5xl lg:text-[3.75rem] xl:text-[4.25rem] font-extrabold text-slate-900 dark:text-white tracking-tight">
-              {/* Line 1 — plain white/dark text */}
+            <h1 className="mt-6 text-[2rem] leading-[1.08] sm:text-[2.75rem] lg:text-[3.5rem] xl:text-[4rem] font-extrabold text-slate-900 dark:text-white tracking-tight">
               <ScrollReveal delay={150}>
                 <span className="block">Supercharge Your</span>
               </ScrollReveal>
 
-              {/* Line 2 — gradient text (kept directly on the element so background-clip works) */}
               <ScrollReveal delay={350}>
                 <span className="relative inline-block">
                   <span className="text-gradient">Digital Workflow</span>
@@ -102,23 +107,19 @@ export default function Banner() {
               </ScrollReveal>
             </h1>
 
-            {/* Description */}
             <ScrollReveal delay={450}>
               <p className="mt-6 text-base sm:text-lg text-slate-500 dark:text-slate-400 leading-relaxed max-w-xl">
-                Access premium AI tools, design assets, templates, and productivity
-                software — all in one beautifully unified platform. Start creating
-                faster today.
+                Access premium AI tools, design assets, templates, and productivity software — all in one beautifully unified platform. Start creating faster today.
               </p>
             </ScrollReveal>
 
-            {/* Buttons */}
             <ScrollReveal delay={550}>
-              <div className="mt-8 flex flex-wrap gap-4">
+              <div className="mt-8 flex flex-wrap gap-3 sm:gap-4">
                 <MagneticButton
                   as="a"
                   href="#products"
                   strength={20}
-                  className="btn-brand px-7 py-3.5 rounded-full font-semibold text-sm inline-flex items-center gap-2 group"
+                  className="btn-brand px-6 sm:px-7 py-3 sm:py-3.5 rounded-full font-semibold text-sm inline-flex items-center gap-2 group"
                 >
                   Explore Products
                   <svg
@@ -135,10 +136,14 @@ export default function Banner() {
                 <MagneticButton
                   as="button"
                   strength={16}
-                  className="group px-7 py-3.5 rounded-full font-semibold text-sm border border-slate-200 dark:border-white/10 glass dark:glass-dark text-slate-800 dark:text-white hover:border-brand-300 dark:hover:border-brand-500/50 inline-flex items-center gap-2.5 transition-all"
+                  className="group px-6 sm:px-7 py-3 sm:py-3.5 rounded-full font-semibold text-sm border border-slate-200 dark:border-white/10 glass dark:glass-dark text-slate-800 dark:text-white hover:border-brand-300 dark:hover:border-brand-500/50 inline-flex items-center gap-2.5 transition-all"
                 >
                   <span className="w-7 h-7 rounded-full bg-brand-50 dark:bg-brand-500/15 grid place-items-center group-hover:bg-brand-100 dark:group-hover:bg-brand-500/25 transition-colors">
-                    <svg className="w-3 h-3 text-brand-600 dark:text-brand-400 ml-0.5" viewBox="0 0 24 24" fill="currentColor">
+                    <svg
+                      className="w-3 h-3 text-brand-600 dark:text-brand-400 ml-0.5"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
                       <path d="M8 5v14l11-7z" />
                     </svg>
                   </span>
@@ -147,9 +152,8 @@ export default function Banner() {
               </div>
             </ScrollReveal>
 
-            {/* Social proof */}
             <ScrollReveal delay={650}>
-              <div className="mt-9 flex flex-wrap items-center gap-5">
+              <div className="mt-8 sm:mt-9 flex flex-wrap items-center gap-5">
                 <div className="flex -space-x-3">
                   {["12", "32", "45", "5", "68"].map((n) => (
                     <img
@@ -178,60 +182,77 @@ export default function Banner() {
           {/* ============== RIGHT: VISUAL ============== */}
           <ScrollReveal delay={200} y={40}>
             <div className="relative" style={{ transform: `translateY(${scrollY * -0.05}px)` }}>
-              {/* Glow behind the card */}
               <div className="absolute -inset-6 bg-gradient-to-tr from-brand-400/40 via-fuchsia-300/30 to-indigo-400/30 dark:from-brand-600/30 dark:via-fuchsia-600/20 dark:to-indigo-600/30 blur-3xl rounded-[3rem] animate-tilt" />
 
               <TiltCard
                 max={8}
                 scale={1.01}
-                className="relative rounded-[2rem] overflow-hidden border border-white/70 dark:border-white/10 shadow-[0_40px_80px_-30px_rgba(76,29,149,.55)] bg-white dark:bg-ink-900"
+                className="relative rounded-2xl sm:rounded-[2rem] overflow-hidden border border-white/70 dark:border-white/10 shadow-[0_40px_80px_-30px_rgba(76,29,149,.55)] bg-white dark:bg-ink-900"
               >
-                {/* ⬇️ NEW IMAGE — futuristic hand + digital interface (matches Figma vibe) ⬇️ */}
                 <img
                   src="https://images.unsplash.com/photo-1618044733300-9472054094ee?auto=format&fit=crop&w=1200&q=80"
                   alt="Hand interacting with digital interface"
-                  className="w-full h-[320px] sm:h-[420px] lg:h-[520px] object-cover"
+                  className="w-full h-[240px] sm:h-[420px] lg:h-[520px] object-cover"
                 />
-                {/* ⬆️ NEW IMAGE ⬆️ */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
               </TiltCard>
 
-              {/* Floating card 1 — Productivity */}
-              <div className="absolute -bottom-6 -left-3 sm:-left-8 glass dark:glass-dark rounded-2xl shadow-xl p-4 flex items-center gap-3 border border-white/80 dark:border-white/10 animate-floaty">
-                <span className="w-11 h-11 rounded-xl bg-gradient-to-br from-emerald-400 to-teal-500 grid place-items-center text-white shadow-md">
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+              {/* Floating card 1 */}
+              <div className="absolute -bottom-4 sm:-bottom-6 -left-2 sm:-left-8 glass dark:glass-dark rounded-xl sm:rounded-2xl shadow-xl p-3 sm:p-4 flex items-center gap-2.5 sm:gap-3 border border-white/80 dark:border-white/10 animate-floaty">
+                <span className="w-9 h-9 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-gradient-to-br from-emerald-400 to-teal-500 grid place-items-center text-white shadow-md">
+                  <svg
+                    className="w-4 h-4 sm:w-5 sm:h-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+                    />
                   </svg>
                 </span>
                 <div>
-                  <p className="text-[10.5px] font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">
+                  <p className="text-[9.5px] sm:text-[10.5px] font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">
                     Productivity
                   </p>
-                  <p className="text-base font-extrabold text-slate-900 dark:text-white">+245%</p>
+                  <p className="text-sm sm:text-base font-extrabold text-slate-900 dark:text-white">
+                    +245%
+                  </p>
                 </div>
               </div>
 
-              {/* Floating card 2 — Tools Ready */}
+              {/* Floating card 2 */}
               <div
-                className="absolute -top-4 -right-3 sm:-right-8 glass dark:glass-dark rounded-2xl shadow-xl p-4 flex items-center gap-3 border border-white/80 dark:border-white/10 animate-floaty"
+                className="absolute -top-3 sm:-top-4 -right-2 sm:-right-8 glass dark:glass-dark rounded-xl sm:rounded-2xl shadow-xl p-3 sm:p-4 flex items-center gap-2.5 sm:gap-3 border border-white/80 dark:border-white/10 animate-floaty"
                 style={{ animationDelay: "-3s" }}
               >
-                <span className="w-11 h-11 rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 grid place-items-center text-white shadow-md">
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                <span className="w-9 h-9 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 grid place-items-center text-white shadow-md">
+                  <svg
+                    className="w-4 h-4 sm:w-5 sm:h-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                  >
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </span>
                 <div>
-                  <p className="text-[10.5px] font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">
+                  <p className="text-[9.5px] sm:text-[10.5px] font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">
                     Tools ready
                   </p>
-                  <p className="text-base font-extrabold text-slate-900 dark:text-white">200+</p>
+                  <p className="text-sm sm:text-base font-extrabold text-slate-900 dark:text-white">
+                    200+
+                  </p>
                 </div>
               </div>
 
-              {/* Floating card 3 — Live users */}
+              {/* Floating card 3 */}
               <div
-                className="absolute top-1/2 -right-4 sm:-right-10 glass dark:glass-dark rounded-2xl shadow-lg p-3 border border-white/80 dark:border-white/10 animate-floaty"
+                className="hidden sm:block absolute top-1/2 -right-4 sm:-right-10 glass dark:glass-dark rounded-2xl shadow-lg p-3 border border-white/80 dark:border-white/10 animate-floaty"
                 style={{ animationDelay: "-6s" }}
               >
                 <div className="flex items-center gap-2">
@@ -246,17 +267,17 @@ export default function Banner() {
         </div>
       </div>
 
-      {/* ============== TRUSTED BY MARQUEE ============== */}
+      {/* TRUSTED BY MARQUEE */}
       <div className="relative border-t border-slate-100 dark:border-white/5 bg-white/40 dark:bg-ink-950/40 backdrop-blur">
-        <div className="container-x py-8">
-          <p className="text-center text-[11px] font-semibold tracking-[0.2em] uppercase text-slate-400 dark:text-slate-500 mb-6">
+        <div className="container-x py-6 sm:py-8">
+          <p className="text-center text-[10px] sm:text-[11px] font-semibold tracking-[0.2em] uppercase text-slate-400 dark:text-slate-500 mb-5 sm:mb-6">
             Trusted by teams at the world's best companies
           </p>
           <Marquee
             items={trustedBy.map((n) => (
               <span
                 key={n}
-                className="text-2xl sm:text-3xl font-extrabold text-slate-700 dark:text-slate-300 tracking-tight"
+                className="text-xl sm:text-2xl md:text-3xl font-extrabold text-slate-700 dark:text-slate-300 tracking-tight"
               >
                 {n}
               </span>
